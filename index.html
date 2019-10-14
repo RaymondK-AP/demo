@@ -1565,7 +1565,7 @@ Install the library for your favorite language now, if you haven’t already don
         <a data-language="dotnet">.NET</a>
     </nav>
     <div class="tabs-content">
-      <div class="code" data-language="curl">
+      <!-- <div class="code" data-language="curl">
   <pre class=" numbered  language-curl"><code class="  language-curl"><span class="token curl">curl</span> <span class="token url">https://api.stripe.com/v1/charges</span> \
 <span class="token option">  -u</span> <span class="token value secret-key" style="pointer-events: auto;">sk_test_4eC39HqLyjWDarjtT1zdp7dc</span>: \
 <span class="token option">  -d</span> <span class="token parameter">amount</span>=<span class="token value">999</span> \
@@ -1593,9 +1593,9 @@ charge <span class="token operator">=</span> <span class="token constant">Stripe
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code><span class="line-numbers"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><span class="line-numbers"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
 
-</div>
+</div> -->
 
-<div class="code" data-language="python">
+<!-- <div class="code" data-language="python">
   <pre class=" numbered  language-python"><code class="  language-python"><span class="token comment"># Set your secret key: remember to change this to your live secret key in production</span>
 <span class="token comment"># See your keys here: https://dashboard.stripe.com/account/apikeys</span>
 <span class="token constant">stripe.api_key</span> <span class="token operator">=</span> <span class="token string secret-key" style="pointer-events: auto;">'sk_test_4eC39HqLyjWDarjtT1zdp7dc'</span>
@@ -1649,9 +1649,9 @@ params<span class="token punctuation">.</span><span class="token function">put</
 <span class="token constant">Charge</span> charge <span class="token operator">=</span> <span class="token constant">Charge</span><span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code><span class="line-numbers"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><span class="line-numbers"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
 
-</div>
+</div> -->
 
-<div class="code" data-language="node">
+<!-- <div class="code" data-language="node">
   <pre class=" numbered  language-javascript"><code class="  language-javascript"><span class="token comment">// Set your secret key: remember to change this to your live secret key in production</span>
 <span class="token comment">// See your keys here: https://dashboard.stripe.com/account/apikeys</span>
 <span class="token keyword">const</span> stripe <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'stripe'</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token string secret-key" style="pointer-events: auto;">'sk_test_4eC39HqLyjWDarjtT1zdp7dc'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1670,7 +1670,23 @@ params<span class="token punctuation">.</span><span class="token function">put</
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code><span class="line-numbers"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><span class="line-numbers"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
 
+</div> -->
+
+<div class="code" data-language="node">
+  <pre class=" numbered  language-javascript"><code class="  language-javascript"><span class="token comment">// After you have securely tokenize your customer's credit card using AP's 
+// tokenization service</span>
+  <span class="token keyword">const</span> chargeReq <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token symbol">token<span class="token punctuation">:</span></span> <span class="token number">"4eC39HqLyjWDarjtT1zdp7dc"</span><span class="token punctuation">,</span>
+    <span class="token symbol">orderId<span class="token punctuation">:</span></span> <span class="token number">"order_1234"</span><span class="token punctuation">,</span>
+    <span class="token symbol">amount<span class="token punctuation">:</span></span> <span class="token number">5000</span><span class="token punctuation">,</span>
+    <span class="token symbol">currency<span class="token punctuation">:</span></span> <span class="token string">"AUD""</span><span class="token punctuation">,</span>
+    <span class="token symbol">description<span class="token punctuation">:</span></span> <span class="token string">"Pizza"</span><span class="token punctuation"></span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code>
+<span class="line-numbers"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+
 </div>
+<!-- 
 
 <div class="code" data-language="go">
   <pre class=" numbered  language-go"><code class="  language-go"><span class="token comment">// Set your secret key: remember to change this to your live secret key in production</span>
@@ -1711,16 +1727,16 @@ StripeConfiguration<span class="token punctuation">.</span>ApiKey <span class="t
 Charge charge <span class="token operator">=</span> service<span class="token punctuation">.</span><span class="token function">Create</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code><span class="line-numbers"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><span class="line-numbers"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
 
-</div>
+</div> -->
 
     </div>
   </div>
 
 
 
-<aside id="synchronous-charge-request" class="note"><h3 id="synchronicity">Synchronicity<a class="anchor" href="https://stripe.com/docs/charges#synchronicity"></a></h3>
+<!-- <aside id="synchronous-charge-request" class="note"><h3 id="synchronicity">Synchronicity<a class="anchor" href="https://stripe.com/docs/charges#synchronicity"></a></h3>
 
-<p>Charging cards with Stripe is a <em>synchronous</em> process. Your code will immediately receive the result of the request:
+<p>Charging cards with Assembly Payments is a <em>synchronous</em> process. Your code will immediately receive the result of the request:
 either a <code>Charge</code> object upon success or an exception upon failure. No asynchronous webhook or IPN script is required.</p></aside><p>
 As a convenience, if you’re logged in while reading this page, we’ve pre-filled the example with your <em>test secret</em> API key.
 Only you can see this value. This will authenticate you to Stripe, so keep it secret and keep it safe.
@@ -1732,7 +1748,7 @@ If the charge attempt fails, we’ll return an <a href="https://stripe.com/docs/
 
 <p>Note that a token can only be used once, and within a few minutes of creation.
 To support multiple charges, future charges, or subscriptions, <a href="https://stripe.com/docs/saving-cards">save the card token</a> instead of charging it.
-</p><aside id="token-id-as-value" class="important amber"><p>Note that the above and below requests expect to receive the <a href="https://stripe.com/docs/api#token_object-id">token ID</a> (e.g., <strong>tok_KPte7942xySKBKyrBu11yEpf</strong>) for the value of the <code>token</code> parameter.</p></aside></section>
+</p><aside id="token-id-as-value" class="important amber"><p>Note that the above and below requests expect to receive the <a href="https://stripe.com/docs/api#token_object-id">token ID</a> (e.g., <strong>tok_KPte7942xySKBKyrBu11yEpf</strong>) for the value of the <code>token</code> parameter.</p></aside></section> -->
 <!-- <section id="dynamic-statement-descriptor"><h2 id="dynamic-statement-descriptor">Dynamic statement descriptor<a class="anchor" href="https://stripe.com/docs/charges#dynamic-statement-descriptor"></a></h2> -->
 <!-- 
 <p>By default, your Stripe account’s <a href="https://stripe.com/docs/account#public-business-information">statement descriptor</a> appears on customer statements whenever you charge their card. Additionally, you can set the statement descriptor dynamically on every charge request with the <code>statement_descriptor</code> argument on the Charge object:</p>
